@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stop Overpaying for Your Phone Plan. Upload Your Usage &amp; Save.</title>
+  <meta name="description" content="Upload a screenshot of your cell phone usage and instantly see the exact plan that fits your real habits—without the hidden fees. 100% free." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    * { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+
+    html { scroll-behavior: smooth; }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, opacity 0.3s ease;
+      opacity: 0;
+    }
+    .accordion-content.open {
+      max-height: 400px;
+      opacity: 1;
+    }
+
+    .btn-cta {
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+    }
+    .btn-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(34, 197, 94, 0.35);
+    }
+    .btn-cta:active {
+      transform: translateY(0);
+    }
+
+    .testimonial-card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .trust-pulse {
+      animation: pulse-soft 3s ease-in-out infinite;
+    }
+    @keyframes pulse-soft {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+
+    .step-card {
+      transition: transform 0.2s ease;
+    }
+    .step-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease forwards;
+    }
+    @keyframes fadeInUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in-up:nth-child(2) { animation-delay: 0.15s; }
+    .fade-in-up:nth-child(3) { animation-delay: 0.3s; }
+  </style>
+</head>
+<body class="bg-white text-gray-900 antialiased">
+
+  <!-- ===== NAV (minimal) ===== -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-5 h-14 flex items-center justify-between">
+      <span class="font-bold text-lg tracking-tight text-green-700">Pare</span>
+      <span class="text-xs text-gray-400 trust-pulse">2,000+ savvy savers</span>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="pt-24 pb-16 md:pt-32 md:pb-24 px-5 bg-gradient-to-b from-green-50 via-white to-white">
+    <div class="max-w-3xl mx-auto text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-gray-900">
+        You're wasting <span class="text-green-600">$500 a year</span> on your cell phone bill.
+      </h1>
+      <p class="mt-6 text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
+        Carriers bank on you not checking your usage. Stop guessing. Upload a screenshot of your data usage and we'll instantly show you the exact plan that fits your real habits—without the hidden fees.
+      </p>
+
+      <!-- Primary CTA -->
+      <div class="mt-8">
+        <a
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-cta inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold text-lg px-8 py-4 rounded-xl shadow-lg"
+          id="cta-hero"
+        >
+          📸 Upload My Usage Screenshot &mdash; It's Free
+        </a>
+        <p class="mt-3 text-xs text-gray-400">🔒 No credit card required. We only count your data and minutes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== "DON'T HAVE YOUR BILL?" ACCORDION ===== -->
+  <section class="px-5 pb-10 -mt-4">
+    <div class="max-w-2xl mx-auto">
+      <button
+        id="accordion-toggle"
+        class="w-full text-left text-sm md:text-base text-green-600 hover:text-green-700 font-medium transition-colors focus:outline-none focus:underline"
+        aria-expanded="false"
+      >
+        ❓ Not sure where to find your usage? Tap here &mdash; it takes 30 seconds.
+      </button>
+
+      <div id="accordion-body" class="accordion-content mt-2">
+        <div class="bg-gray-50 border border-gray-200 rounded-xl divide-y divide-gray-200 overflow-hidden">
+          <!-- iPhone -->
+          <div class="px-5 py-4 flex items-start gap-3">
+            <span class="text-xl shrink-0 mt-0.5">📱</span>
+            <div>
+              <p class="font-semibold text-sm">iPhone Users</p>
+              <p class="text-sm text-gray-600 mt-0.5">Settings <span class="text-gray-400">›</span> Cellular <span class="text-gray-400">›</span> Current Period. Screenshot that screen.</p>
+            </div>
+          </div>
+          <!-- Android -->
+          <div class="px-5 py-4 flex items-start gap-3">
+            <span class="text-xl shrink-0 mt-0.5">🤖</span>
+            <div>
+              <p class="font-semibold text-sm">Android Users</p>
+              <p class="text-sm text-gray-600 mt-0.5">Settings <span class="text-gray-400">›</span> Network &amp; Internet <span class="text-gray-400">›</span> SIMs <span class="text-gray-400">›</span> App data usage.</p>
+            </div>
+          </div>
+          <!-- Carrier App -->
+          <div class="px-5 py-4 flex items-start gap-3">
+            <span class="text-xl shrink-0 mt-0.5">📲</span>
+            <div>
+              <p class="font-semibold text-sm">Carrier App Users</p>
+              <p class="text-sm text-gray-600 mt-0.5">Log in <span class="text-gray-400">›</span> Usage or My Plan. Screenshot the breakdown.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="py-16 md:py-24 px-5 bg-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">No math. No guessing. 100% free to check.</h2>
+      <div class="mt-12 grid md:grid-cols-3 gap-8 md:gap-6">
+        <!-- Step 1 -->
+        <div class="step-card bg-gray-50 rounded-2xl p-6 md:p-8 text-center">
+          <div class="w-14 h-14 bg-green-100 text-green-700 rounded-2xl flex items-center justify-center text-2xl mx-auto">📸</div>
+          <h3 class="mt-5 font-bold text-lg">Snap &amp; Upload</h3>
+          <p class="mt-2 text-sm text-gray-600 leading-relaxed">Take a screenshot of your carrier app's usage page or your phone's built-in data usage screen.</p>
+        </div>
+        <!-- Step 2 -->
+        <div class="step-card bg-gray-50 rounded-2xl p-6 md:p-8 text-center">
+          <div class="w-14 h-14 bg-green-100 text-green-700 rounded-2xl flex items-center justify-center text-2xl mx-auto">🤖</div>
+          <h3 class="mt-5 font-bold text-lg">We Parse the Fine Print</h3>
+          <p class="mt-2 text-sm text-gray-600 leading-relaxed">Our AI extracts your actual monthly usage (data, minutes, texts) and ignores the fluff.</p>
+        </div>
+        <!-- Step 3 -->
+        <div class="step-card bg-gray-50 rounded-2xl p-6 md:p-8 text-center">
+          <div class="w-14 h-14 bg-green-100 text-green-700 rounded-2xl flex items-center justify-center text-2xl mx-auto">🏆</div>
+          <h3 class="mt-5 font-bold text-lg">Get Your Top 3 Matches</h3>
+          <p class="mt-2 text-sm text-gray-600 leading-relaxed">We compare your real usage against 50+ carriers to show you the cheapest plan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRIVACY PROMISE ===== -->
+  <section class="py-16 md:py-24 px-5 bg-green-50">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-center">We only look at the numbers. That's it.</h2>
+      <div class="mt-10 grid sm:grid-cols-2 gap-5">
+        <div class="flex items-start gap-3 bg-white rounded-xl p-5 shadow-sm">
+          <span class="text-green-600 text-xl shrink-0 mt-0.5">📊</span>
+          <p class="text-sm text-gray-700"><strong>Numbers only:</strong> Our AI scans your screenshot for three things — GB, minutes, and texts. Nothing else leaves your phone.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-white rounded-xl p-5 shadow-sm">
+          <span class="text-green-600 text-xl shrink-0 mt-0.5">🗑️</span>
+          <p class="text-sm text-gray-700"><strong>Auto-delete:</strong> Your uploaded screenshot is deleted immediately after analysis.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-white rounded-xl p-5 shadow-sm">
+          <span class="text-green-600 text-xl shrink-0 mt-0.5">🔑</span>
+          <p class="text-sm text-gray-700"><strong>No carrier login:</strong> We never ask for your carrier username or password.</p>
+        </div>
+        <div class="flex items-start gap-3 bg-white rounded-xl p-5 shadow-sm">
+          <span class="text-green-600 text-xl shrink-0 mt-0.5">✉️</span>
+          <p class="text-sm text-gray-700"><strong>No spam:</strong> Enter your email only when ready. Unsubscribe with one click.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIAL ===== -->
+  <section class="py-16 md:py-24 px-5 bg-white">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Real people. Real savings. No contract tricks.</h2>
+      <div class="mt-10 testimonial-card bg-gray-50 border border-gray-200 rounded-2xl p-8 md:p-10 text-left max-w-xl mx-auto">
+        <div class="flex items-center gap-1 text-yellow-400 text-lg mb-4">
+          ★★★★★
+        </div>
+        <blockquote class="text-base md:text-lg text-gray-700 leading-relaxed">
+          &ldquo;I was paying $90/month for 'Unlimited' but only used 6GB. This tool found me a $35 plan on the exact same network. I literally saved $660 this year.&rdquo;
+        </blockquote>
+        <div class="mt-5 flex items-center gap-3">
+          <div class="w-10 h-10 bg-green-200 text-green-800 rounded-full flex items-center justify-center font-bold text-sm">MR</div>
+          <div>
+            <p class="font-semibold text-sm">Mark R., Chicago</p>
+            <p class="text-xs text-green-600 font-medium">Saved $55/mo</p>
+          </div>
+        </div>
+      </div>
+      <p class="mt-6 text-sm text-gray-400 font-medium trust-pulse">Trusted by 2,000+ savvy savers</p>
+    </div>
+  </section>
+
+  <!-- ===== FINAL CTA ===== -->
+  <section class="py-16 md:py-24 px-5 bg-gradient-to-b from-white to-green-50">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Stop donating money to your carrier.</h2>
+      <p class="mt-4 text-lg text-gray-600 max-w-xl mx-auto">Find out in 2 minutes if you're overpaying. If you're not, we'll tell you that too. No hard feelings.</p>
+      <div class="mt-8">
+        <a
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-cta inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold text-lg px-8 py-4 rounded-xl shadow-lg"
+          id="cta-bottom"
+        >
+          📸 Upload My Screenshot &ndash; It's Free
+        </a>
+        <p class="mt-3 text-xs text-gray-400">🔒 Your data is safe. We don't store your screenshot or share your email.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="border-t border-gray-100 py-8 px-5">
+    <div class="max-w-3xl mx-auto text-center text-xs text-gray-400 leading-relaxed">
+      <p>We only count what matters — your data, minutes, and texts.</p>
+      <p class="mt-2">&copy; 2026 Pare. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ===== JAVASCRIPT ===== -->
+  <script>
+    (function () {
+      // ---- Accordion ----
+      var toggle = document.getElementById('accordion-toggle');
+      var body = document.getElementById('accordion-body');
+
+      if (toggle && body) {
+        toggle.addEventListener('click', function () {
+          var isOpen = body.classList.toggle('open');
+          toggle.setAttribute('aria-expanded', isOpen);
+        });
+      }
+
+      // ---- Tally form URL ----
+      var FORM_URL = 'https://tally.so/r/J9Y107';
+
+      var ctaHero = document.getElementById('cta-hero');
+      var ctaBottom = document.getElementById('cta-bottom');
+
+      if (ctaHero) ctaHero.href = FORM_URL;
+      if (ctaBottom) ctaBottom.href = FORM_URL;
+
+      // ---- Optional: Typeform embed popup (uncomment and configure if desired) ----
+      // (function() {
+      //   var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,
+      //   id='typef_orm',b='https://embed.typeform.com/';
+      //   if(!gi.call(d,id)) {
+      //     js=ce.call(d,'script');js.id=id;js.src=b+'embed.js';
+      //     q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q);
+      //   }
+      // })();
+      // function openTypeform() {
+      //   window.tf.createPopup(TYPEFORM_URL, { medium: 'snippet' }).open();
+      // }
+    })();
+  </script>
+
+</body>
+</html>
